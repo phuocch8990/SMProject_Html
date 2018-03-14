@@ -16,22 +16,22 @@ public class Category implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private String id;
+	private int id;
 
 	private String name;
 
 	//bi-directional many-to-one association to Product
-	@OneToMany(mappedBy="category", fetch=FetchType.EAGER)
-	private List<Product> products;
+//	@OneToMany(mappedBy="category", fetch=FetchType.EAGER)
+//	private List<Product> products;
 
 	public Category() {
 	}
 
-	public String getId() {
+	public int getId() {
 		return this.id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -43,26 +43,26 @@ public class Category implements Serializable {
 		this.name = name;
 	}
 
-	public List<Product> getProducts() {
-		return this.products;
-	}
-
-	public void setProducts(List<Product> products) {
-		this.products = products;
-	}
-
-	public Product addProduct(Product product) {
-		getProducts().add(product);
-		product.setCategory(this);
-
-		return product;
-	}
-
-	public Product removeProduct(Product product) {
-		getProducts().remove(product);
-		product.setCategory(null);
-
-		return product;
-	}
+//	public List<Product> getProducts() {
+//		return this.products;
+//	}
+//
+//	public void setProducts(List<Product> products) {
+//		this.products = products;
+//	}
+//
+//	public Product addProduct(Product product) {
+//		getProducts().add(product);
+//		product.setCategory(this);
+//
+//		return product;
+//	}
+//
+//	public Product removeProduct(Product product) {
+//		getProducts().remove(product);
+//		product.setCategory(null);
+//
+//		return product;
+//	}
 
 }

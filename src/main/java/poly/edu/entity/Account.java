@@ -16,7 +16,6 @@ public class Account implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private String username;
 
 	private String address;
@@ -30,6 +29,9 @@ public class Account implements Serializable {
 
 	private byte gender;
 
+	@Column(name="IMAGES_ACCOUNT")
+	private String imagesAccount;
+
 	private String password;
 
 	private String phone;
@@ -37,16 +39,12 @@ public class Account implements Serializable {
 	private byte roles;
 
 	//bi-directional many-to-one association to CommentProduct
-	@OneToMany(mappedBy="account", fetch=FetchType.EAGER)
-	private List<CommentProduct> commentProducts;
-
-	//bi-directional many-to-one association to Image
-	@OneToMany(mappedBy="account", fetch=FetchType.EAGER)
-	private List<Image> images;
+//	@OneToMany(mappedBy="account", fetch=FetchType.EAGER)
+//	private List<CommentProduct> commentProducts;
 
 	//bi-directional many-to-one association to Invoice
-	@OneToMany(mappedBy="account", fetch=FetchType.EAGER)
-	private List<Invoice> invoices;
+//	@OneToMany(mappedBy="account", fetch=FetchType.EAGER)
+//	private List<Invoice> invoices;
 
 	public Account() {
 	}
@@ -99,6 +97,14 @@ public class Account implements Serializable {
 		this.gender = gender;
 	}
 
+	public String getImagesAccount() {
+		return this.imagesAccount;
+	}
+
+	public void setImagesAccount(String imagesAccount) {
+		this.imagesAccount = imagesAccount;
+	}
+
 	public String getPassword() {
 		return this.password;
 	}
@@ -123,70 +129,48 @@ public class Account implements Serializable {
 		this.roles = roles;
 	}
 
-	public List<CommentProduct> getCommentProducts() {
-		return this.commentProducts;
-	}
+//	public List<CommentProduct> getCommentProducts() {
+//		return this.commentProducts;
+//	}
+//
+//	public void setCommentProducts(List<CommentProduct> commentProducts) {
+//		this.commentProducts = commentProducts;
+//	}
+//
+//	public CommentProduct addCommentProduct(CommentProduct commentProduct) {
+//		getCommentProducts().add(commentProduct);
+//		commentProduct.setAccount(this);
+//
+//		return commentProduct;
+//	}
+//
+//	public CommentProduct removeCommentProduct(CommentProduct commentProduct) {
+//		getCommentProducts().remove(commentProduct);
+//		commentProduct.setAccount(null);
+//
+//		return commentProduct;
+//	}
 
-	public void setCommentProducts(List<CommentProduct> commentProducts) {
-		this.commentProducts = commentProducts;
-	}
-
-	public CommentProduct addCommentProduct(CommentProduct commentProduct) {
-		getCommentProducts().add(commentProduct);
-		commentProduct.setAccount(this);
-
-		return commentProduct;
-	}
-
-	public CommentProduct removeCommentProduct(CommentProduct commentProduct) {
-		getCommentProducts().remove(commentProduct);
-		commentProduct.setAccount(null);
-
-		return commentProduct;
-	}
-
-	public List<Image> getImages() {
-		return this.images;
-	}
-
-	public void setImages(List<Image> images) {
-		this.images = images;
-	}
-
-	public Image addImage(Image image) {
-		getImages().add(image);
-		image.setAccount(this);
-
-		return image;
-	}
-
-	public Image removeImage(Image image) {
-		getImages().remove(image);
-		image.setAccount(null);
-
-		return image;
-	}
-
-	public List<Invoice> getInvoices() {
-		return this.invoices;
-	}
-
-	public void setInvoices(List<Invoice> invoices) {
-		this.invoices = invoices;
-	}
-
-	public Invoice addInvoice(Invoice invoice) {
-		getInvoices().add(invoice);
-		invoice.setAccount(this);
-
-		return invoice;
-	}
-
-	public Invoice removeInvoice(Invoice invoice) {
-		getInvoices().remove(invoice);
-		invoice.setAccount(null);
-
-		return invoice;
-	}
+//	public List<Invoice> getInvoices() {
+//		return this.invoices;
+//	}
+//
+//	public void setInvoices(List<Invoice> invoices) {
+//		this.invoices = invoices;
+//	}
+//
+//	public Invoice addInvoice(Invoice invoice) {
+//		getInvoices().add(invoice);
+//		invoice.setAccount(this);
+//
+//		return invoice;
+//	}
+//
+//	public Invoice removeInvoice(Invoice invoice) {
+//		getInvoices().remove(invoice);
+//		invoice.setAccount(null);
+//
+//		return invoice;
+//	}
 
 }

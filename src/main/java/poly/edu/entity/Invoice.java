@@ -18,7 +18,7 @@ public class Invoice implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private String id;
+	private int id;
 
 	@Temporal(TemporalType.DATE)
 	@Column(name="ORDER_DATE")
@@ -36,17 +36,17 @@ public class Invoice implements Serializable {
 	private Account account;
 
 	//bi-directional many-to-one association to InvoiceDetail
-	@OneToMany(mappedBy="invoice", fetch=FetchType.EAGER)
-	private List<InvoiceDetail> invoiceDetails;
+//	@OneToMany(mappedBy="invoice", fetch=FetchType.EAGER)
+//	private List<InvoiceDetail> invoiceDetails;
 
 	public Invoice() {
 	}
 
-	public String getId() {
+	public int getId() {
 		return this.id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -82,26 +82,26 @@ public class Invoice implements Serializable {
 		this.account = account;
 	}
 
-	public List<InvoiceDetail> getInvoiceDetails() {
-		return this.invoiceDetails;
-	}
-
-	public void setInvoiceDetails(List<InvoiceDetail> invoiceDetails) {
-		this.invoiceDetails = invoiceDetails;
-	}
-
-	public InvoiceDetail addInvoiceDetail(InvoiceDetail invoiceDetail) {
-		getInvoiceDetails().add(invoiceDetail);
-		invoiceDetail.setInvoice(this);
-
-		return invoiceDetail;
-	}
-
-	public InvoiceDetail removeInvoiceDetail(InvoiceDetail invoiceDetail) {
-		getInvoiceDetails().remove(invoiceDetail);
-		invoiceDetail.setInvoice(null);
-
-		return invoiceDetail;
-	}
+//	public List<InvoiceDetail> getInvoiceDetails() {
+//		return this.invoiceDetails;
+//	}
+//
+//	public void setInvoiceDetails(List<InvoiceDetail> invoiceDetails) {
+//		this.invoiceDetails = invoiceDetails;
+//	}
+//
+//	public InvoiceDetail addInvoiceDetail(InvoiceDetail invoiceDetail) {
+//		getInvoiceDetails().add(invoiceDetail);
+//		invoiceDetail.setInvoice(this);
+//
+//		return invoiceDetail;
+//	}
+//
+//	public InvoiceDetail removeInvoiceDetail(InvoiceDetail invoiceDetail) {
+//		getInvoiceDetails().remove(invoiceDetail);
+//		invoiceDetail.setInvoice(null);
+//
+//		return invoiceDetail;
+//	}
 
 }

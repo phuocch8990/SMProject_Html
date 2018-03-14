@@ -17,7 +17,7 @@ public class CommentProduct implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private String id;
+	private int id;
 
 	@Temporal(TemporalType.DATE)
 	@Column(name="CREATED_DATE")
@@ -37,11 +37,11 @@ public class CommentProduct implements Serializable {
 	public CommentProduct() {
 	}
 
-	public String getId() {
+	public int getId() {
 		return this.id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

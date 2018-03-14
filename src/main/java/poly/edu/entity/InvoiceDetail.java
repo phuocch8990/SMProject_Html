@@ -16,7 +16,7 @@ public class InvoiceDetail implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private String id;
+	private int id;
 
 	private int amount;
 
@@ -31,11 +31,11 @@ public class InvoiceDetail implements Serializable {
 	public InvoiceDetail() {
 	}
 
-	public String getId() {
+	public int getId() {
 		return this.id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

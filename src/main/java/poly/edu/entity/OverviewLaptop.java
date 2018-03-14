@@ -16,76 +16,206 @@ public class OverviewLaptop implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private String id;
+	private int id;
 
-	//bi-directional many-to-one association to ExpandableFeature
-	@ManyToOne
-	@JoinColumn(name="EXPANDABLE_FEATURES_ID")
-	private ExpandableFeature expandableFeature;
+	@Column(name="BUS_CPU")
+	private String busCpu;
 
-	//bi-directional many-to-one association to GraphicsSound
-	@ManyToOne
-	@JoinColumn(name="GRAPHICS_SOUND_ID")
-	private GraphicsSound graphicsSound;
+	@Column(name="BUS_RAM")
+	private String busRam;
 
-	//bi-directional many-to-one association to MemoryLaptop
-	@ManyToOne
-	@JoinColumn(name="MEMORY_LAPTOP_ID")
-	private MemoryLaptop memoryLaptop;
+	@Column(name="CONG_GIAO_TIEP")
+	private String congGiaoTiep;
 
-	//bi-directional many-to-one association to Processor
-	@ManyToOne
-	private Processor processor;
+	@Column(name="GRAPHICS_CARD")
+	private String graphicsCard;
+
+	@Column(name="HARD_DRIVE")
+	private String hardDrive;
+
+	private String ram;
+
+	@Column(name="READ_MICROSD")
+	private String readMicrosd;
+
+	private String resolution;
+
+	@Column(name="SCREEN_TECHNOLOGY")
+	private String screenTechnology;
+
+	@Column(name="SPEED_CPU")
+	private String speedCpu;
+
+	@Column(name="TECHNOLOGY_CPU")
+	private String technologyCpu;
+
+	@Column(name="TECHNOLOGY_SOUND")
+	private String technologySound;
+
+	@Column(name="TOUCH_TECHNOLOGY")
+	private String touchTechnology;
+
+	@Column(name="TYPE_CPU")
+	private String typeCpu;
+
+	@Column(name="TYPE_RAM")
+	private String typeRam;
+
+	@Column(name="WIDE_SCREEN")
+	private String wideScreen;
+
+	@Column(name="WIRELESS_CONNECTIVITY")
+	private String wirelessConnectivity;
 
 	//bi-directional many-to-one association to Product
 	@ManyToOne
 	private Product product;
 
-	//bi-directional many-to-one association to Screen
-	@ManyToOne
-	private Screen screen;
-
 	public OverviewLaptop() {
 	}
 
-	public String getId() {
+	public int getId() {
 		return this.id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
-	public ExpandableFeature getExpandableFeature() {
-		return this.expandableFeature;
+	public String getBusCpu() {
+		return this.busCpu;
 	}
 
-	public void setExpandableFeature(ExpandableFeature expandableFeature) {
-		this.expandableFeature = expandableFeature;
+	public void setBusCpu(String busCpu) {
+		this.busCpu = busCpu;
 	}
 
-	public GraphicsSound getGraphicsSound() {
-		return this.graphicsSound;
+	public String getBusRam() {
+		return this.busRam;
 	}
 
-	public void setGraphicsSound(GraphicsSound graphicsSound) {
-		this.graphicsSound = graphicsSound;
+	public void setBusRam(String busRam) {
+		this.busRam = busRam;
 	}
 
-	public MemoryLaptop getMemoryLaptop() {
-		return this.memoryLaptop;
+	public String getCongGiaoTiep() {
+		return this.congGiaoTiep;
 	}
 
-	public void setMemoryLaptop(MemoryLaptop memoryLaptop) {
-		this.memoryLaptop = memoryLaptop;
+	public void setCongGiaoTiep(String congGiaoTiep) {
+		this.congGiaoTiep = congGiaoTiep;
 	}
 
-	public Processor getProcessor() {
-		return this.processor;
+	public String getGraphicsCard() {
+		return this.graphicsCard;
 	}
 
-	public void setProcessor(Processor processor) {
-		this.processor = processor;
+	public void setGraphicsCard(String graphicsCard) {
+		this.graphicsCard = graphicsCard;
+	}
+
+	public String getHardDrive() {
+		return this.hardDrive;
+	}
+
+	public void setHardDrive(String hardDrive) {
+		this.hardDrive = hardDrive;
+	}
+
+	public String getRam() {
+		return this.ram;
+	}
+
+	public void setRam(String ram) {
+		this.ram = ram;
+	}
+
+	public String getReadMicrosd() {
+		return this.readMicrosd;
+	}
+
+	public void setReadMicrosd(String readMicrosd) {
+		this.readMicrosd = readMicrosd;
+	}
+
+	public String getResolution() {
+		return this.resolution;
+	}
+
+	public void setResolution(String resolution) {
+		this.resolution = resolution;
+	}
+
+	public String getScreenTechnology() {
+		return this.screenTechnology;
+	}
+
+	public void setScreenTechnology(String screenTechnology) {
+		this.screenTechnology = screenTechnology;
+	}
+
+	public String getSpeedCpu() {
+		return this.speedCpu;
+	}
+
+	public void setSpeedCpu(String speedCpu) {
+		this.speedCpu = speedCpu;
+	}
+
+	public String getTechnologyCpu() {
+		return this.technologyCpu;
+	}
+
+	public void setTechnologyCpu(String technologyCpu) {
+		this.technologyCpu = technologyCpu;
+	}
+
+	public String getTechnologySound() {
+		return this.technologySound;
+	}
+
+	public void setTechnologySound(String technologySound) {
+		this.technologySound = technologySound;
+	}
+
+	public String getTouchTechnology() {
+		return this.touchTechnology;
+	}
+
+	public void setTouchTechnology(String touchTechnology) {
+		this.touchTechnology = touchTechnology;
+	}
+
+	public String getTypeCpu() {
+		return this.typeCpu;
+	}
+
+	public void setTypeCpu(String typeCpu) {
+		this.typeCpu = typeCpu;
+	}
+
+	public String getTypeRam() {
+		return this.typeRam;
+	}
+
+	public void setTypeRam(String typeRam) {
+		this.typeRam = typeRam;
+	}
+
+	public String getWideScreen() {
+		return this.wideScreen;
+	}
+
+	public void setWideScreen(String wideScreen) {
+		this.wideScreen = wideScreen;
+	}
+
+	public String getWirelessConnectivity() {
+		return this.wirelessConnectivity;
+	}
+
+	public void setWirelessConnectivity(String wirelessConnectivity) {
+		this.wirelessConnectivity = wirelessConnectivity;
 	}
 
 	public Product getProduct() {
@@ -94,14 +224,6 @@ public class OverviewLaptop implements Serializable {
 
 	public void setProduct(Product product) {
 		this.product = product;
-	}
-
-	public Screen getScreen() {
-		return this.screen;
-	}
-
-	public void setScreen(Screen screen) {
-		this.screen = screen;
 	}
 
 }

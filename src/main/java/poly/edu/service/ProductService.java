@@ -1,5 +1,6 @@
 package poly.edu.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,10 @@ public class ProductService {
 	
 	public List<Product> getAll(){
 		return productRepo.findAll();
-		//dadadsadsad
 	}
+	
+//	public List<Product> getAllList(){
+//		return productRepo.findAllProduct();
+//	}
+
 }
